@@ -10,6 +10,62 @@ body {
   overflow: hidden;
 }
 
+html {
+  font-family: "Inter";
+  width: 550px;
+  height: 750px;
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border-style: none;
+  background: turquoise;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.navbar {
+  padding-top: 350px;
+  width: 100%;
+  height: 100vh;
+  margin: none;
+  border-radius: 16px;
+  /*background-color: turquoise;*/
+  background: linear-gradient(to top, #8e2de2, #4a00e0);
+}
+
+.navList {
+  padding: 100px 70px 200px 70px;
+}
+
+.nav-item {
+  font-size: 20px;
+  font-weight: normal;
+  list-style: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px; /* Optional: Rounded corners */
+}
+
+.nav-item:hover {
+  backdrop-filter: blur(10px); /* ✅ Adds a smooth blur effect */
+  font-size: 25px;
+  font-weight: bold;
+  list-style: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+h4 {
+  margin-block-start: 1px;
+  margin-block-end: 1px;
+}
+
 body::-webkit-scrollbar {
   display: none; /* Hides scrollbar in WebKit-based browsers (e.g., Chrome, Safari) */
 }
