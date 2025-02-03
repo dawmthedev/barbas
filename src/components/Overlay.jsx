@@ -36,7 +36,7 @@ export const Overlay = () => {
 
   return (
     <Scroll html>
-      <div className="w-screen z-99999">
+      <div className="w-screen">
         <Section opacity={opacityFirstSection}>
           <h1 className="font-bold text-4xl text-gray-800">El Barbas Hats</h1>
           <p className="text-gray-600 mt-4">
