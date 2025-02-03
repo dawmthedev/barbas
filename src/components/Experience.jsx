@@ -8,7 +8,11 @@ export const Experience1 = () => {
   return (
     <>
       <ambientLight intensity={1} />
-      <OrbitControls enableZoom={false} />
+      <OrbitControls
+        enableZoom={false}
+        enablePan={false}
+        enableRotate={false}
+      />
       <ScrollControls pages={3} damping={0.25}>
         <Overlay />
         <Urus />

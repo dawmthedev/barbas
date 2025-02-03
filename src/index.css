@@ -3,18 +3,79 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* Hide scrollbars while allowing scroll functionality */
-body {
-  height: 100%;
+/* Ensure the body takes the full height */
+body,
+html {
   margin: 0;
-  overflow: hidden;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
 }
 
-html {
-  font-family: "Inter";
-  width: 550px;
-  height: 750px;
+/* Main container */
+.w-screen {
+  display: flex;
+  flex-direction: row; /* For desktop, we want horizontal layout */
+  width: 100%;
+  height: 100vh;
 }
+
+/* Red content section */
+.flex-1 {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Makes sure it takes up the remaining space */
+  justify-content: flex-start; /* Align content to the top */
+  align-items: flex-end; /* Right align the boxes */
+  overflow-y: auto;
+  background-color: red;
+  padding: 0 0px; /* Optional padding */
+  box-sizing: border-box; /* Ensure padding does not cause overflow */
+}
+
+/* Paywall container (yellow section) */
+.paywall-container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 300px; /* Yellow section stays fixed width */
+  height: 100vh; /* Full height */
+  background-color: yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* Ensure the yellow section stays on top */
+}
+
+/* Pay Now button */
+.pay-now-button {
+  background-color: red;
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Ensure proper layout for mobile screens */
+@media (max-width: 767px) {
+  .w-screen {
+    flex-direction: column; /* Stack red and yellow on top of each other on mobile */
+  }
+
+  .paywall-container {
+    position: relative;
+    width: 100%; /* Make sure it takes full width on mobile */
+    height: auto; /* Adjust height */
+  }
+
+  .flex-1 {
+    width: 100%; /* Red section takes full width */
+    height: auto; /* Adjust height for content */
+    align-items: flex-start; /* Align content to top */
+  }
+}
+
+/* Other things  */
 
 .btn {
   width: 40px;
@@ -118,3 +179,5 @@ body {
   font-size: 2rem;
   z-index: 10; /* Ensure text is above the canvas */
 }
+/* 
+Boxes section main */
