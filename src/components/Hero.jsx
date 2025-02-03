@@ -6,6 +6,7 @@ const Hero = () => (
     <video
       src="/assets/barbas.mov"
       autoPlay
+      controls={false}
       loop
       muted
       className="object-cover w-full h-full"

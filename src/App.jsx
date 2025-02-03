@@ -3,6 +3,7 @@ import { OrbitControls, ScrollControls } from "@react-three/drei";
 import { Experience1 } from "./components/Experience";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+
 // Content Section Components
 const ContentSection = ({ title, description, children }) => (
   <div className="content-section py-8 px-10">
@@ -15,7 +16,6 @@ const ContentSection = ({ title, description, children }) => (
 // Scroll Section Component
 const ScrollSection = () => (
   <div className="flex-1 overflow-auto bg-red-500 p-4 flex flex-col">
-    {/* Content Scroll Section */}
     <ContentSection
       title="Get Expert Picks Built Off Analytics"
       description="Our research-based parlays provide you with the most up-to-date information on what to play and when to play it. Join us today and experience the Pats Picks advantage."
@@ -39,14 +39,15 @@ const ScrollSection = () => (
         </div>
       </div>
     </ContentSection>
-    <div style={{ height: "1500px" }}></div> {/* Example content */}
+    <div style={{ height: "1500px" }}></div>
   </div>
 );
 
 function App() {
+  const isMobile = window.innerWidth <= 768; // Check if mobile
+
   return (
     <div className="relative w-full h-screen">
-      {/* Canvas for 3D Experience */}
       <Canvas
         camera={{
           fov: 75,
@@ -57,14 +58,12 @@ function App() {
         <Experience1 />
       </Canvas>
 
-      {/* Main content */}
       <div className="relative z-10 w-full h-screen flex flex-col">
         <Hero />
         <div className="flex-1 overflow-auto bg-red-500 p-4 z-10">
           <ScrollSection />
         </div>
 
-        {/* Pay Now Section */}
         <div className="bg-yellow-500 z-10">
           <div className="paywall-container flex justify-center items-center py-4">
             <button className="pay-now-button bg-red-600 text-white px-6 py-2">
